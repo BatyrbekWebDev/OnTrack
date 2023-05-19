@@ -1,5 +1,6 @@
 <script setup>
 import { CheckCircleIcon } from '@heroicons/vue/24/solid'
+import { ClockIcon, ListBulletIcon, ChartBarIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <template>
@@ -17,7 +18,26 @@ import { CheckCircleIcon } from '@heroicons/vue/24/solid'
       </div>
     </a>
   </header>
-  <main>
-    
+  <main class="flex flex-grow flex-col">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, praesentium?
   </main>
+  <nav class="sticky bottom-0 z-10 bg-white">
+    <ul class="flex items-center justify-around border-t">
+      <li class="flex-1">
+        <a class="flex flex-col items-center p-2 text-xs capitalize" href="#timeline">
+          <ClockIcon class="w-6 h-6"/> timeline
+        </a>
+      </li>
+      <li class="flex-1">
+        <a class="flex flex-col items-center p-2 text-xs capitalize" href="#activities">
+          <ListBulletIcon class="w-6 h-6"/> activities
+        </a>
+      </li>
+      <li class="flex-1">
+        <a class="flex flex-col items-center p-2 text-xs capitalize" href="#progress">
+          <ChartBarIcon class="w-6 h-6"/> progress
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>
