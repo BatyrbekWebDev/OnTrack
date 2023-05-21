@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { PAGE_TIMELINE, PAGE_ACTIVITIES, PAGE_PROGRESS } from './constants'
+import { normalizePageHash } from './functions'
 
 import TheHeader from './components/TheHeader.vue'
 import TheNav from './components/TheNav.vue'
