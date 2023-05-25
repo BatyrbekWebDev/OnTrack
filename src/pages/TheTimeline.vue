@@ -11,7 +11,7 @@ defineProps({
   activitySelectOptions: {
     required: true,
     type: Array,
-    validator:validateSelectOptions
+    validator: validateSelectOptions
   }
 })
 </script>
