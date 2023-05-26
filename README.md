@@ -1,7 +1,5 @@
 # OnTrack
 
-Этот шаблон поможет вам начать разработку с Vue 3 в Vite.
-
 ## Рекомендуемая настройка IDE
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (и отключение Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
