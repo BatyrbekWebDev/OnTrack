@@ -1,7 +1,7 @@
 <script setup>
 import { PAGE_TIMELINE, PAGE_PROGRESS } from '../constants'
-import TheLogo from './TheLogo.vue'
 import { isPageValid } from '../validators'
+import TheLogo from './TheLogo.vue'
 import TheHeaderProgress from './TheHeaderProgress.vue'
 
 const emit = defineEmits({

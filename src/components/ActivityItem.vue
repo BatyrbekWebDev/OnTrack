@@ -20,6 +20,7 @@ const emit = defineEmits({
 
 const secondsToComplete = ref(null)
 </script>
+
 <template>
   <li class="flex flex-col gap-2 p-4">
     <div class="flex items-center gap-2">
