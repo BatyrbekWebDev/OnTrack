@@ -1,5 +1,5 @@
 <script setup>
-import {NULLABLE_ACTIVITY} from '../constants.js'
+import { NULLABLE_ACTIVITY } from '../constants.js'
 import {
   isTimelineItemValid,
   isActivityValid,
