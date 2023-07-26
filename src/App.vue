@@ -31,6 +31,7 @@ function goTo(page) {
   if (page !== PAGE_TIMELINE) {
     document.body.scrollIntoView()
   }
+
   currentPage.value = page
 }
 
@@ -45,11 +46,12 @@ function deleteActivity(activity) {
       timelineItem.activitySeconds = 0
     }
   })
+
   activities.value.splice(activities.value.indexOf(activity), 1)
 }
 
 function setTimelineItemActivity(timelineItem, activity) {
-  timelineItem.activity = activity.id
+  timelineItem.activityId = activity.id
 }
 
 function setActivitySecondsToComplete(activity, secondsToComplete) {
@@ -73,6 +75,7 @@ function setActivitySecondsToComplete(activity, secondsToComplete) {
     <TheActivities
       v-show="currentPage === PAGE_ACTIVITIES"
       :activities="activities"
+      :timeline-items="timelineItems"
       @create-activity="createActivity"
       @delete-activity="deleteActivity"
       @set-activity-seconds-to-complete="setActivitySecondsToComplete"
