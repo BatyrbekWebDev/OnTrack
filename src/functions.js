@@ -4,7 +4,7 @@ import {
   SECONDS_IN_HOUR,
   SECONDS_IN_MINUTE,
   MINUTES_IN_HOUR,
-  HOURS_IN_DAY,
+  HOURS_IN_DAY
 } from './constants'
 import { isPageValid, isNull } from './validators'
 
