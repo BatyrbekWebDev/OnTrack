@@ -1,13 +1,14 @@
 <script setup>
-import { nextTick, ref, watchPostEffect } from 'vue'
-import { MIDNIGHT_HOUR, PAGE_TIMELINE } from '../constants'
+import { ref, watchPostEffect, nextTick } from 'vue'
+import { PAGE_TIMELINE, MIDNIGHT_HOUR } from '../constants'
 import {
   validateTimelineItems,
   validateSelectOptions,
   validateActivities,
   isTimelineItemValid,
   isActivityValid,
-  isPageValid
+  isPageValid,
+  isNumber
 } from '../validators'
 import TimelineItem from '../components/TimelineItem.vue'
 
@@ -35,12 +36,15 @@ const props = defineProps({
 })
 
 const emit = defineEmits({
+  updateTimelineItemActivitySeconds(timelineItem, activitySeconds) {
+    return [isTimelineItemValid(timelineItem), isNumber(activitySeconds)].every(Boolean)
+  },
   setTimelineItemActivity(timelineItem, activity) {
     return [isTimelineItemValid(timelineItem), isActivityValid(activity)].every(Boolean)
   }
 })
 
-defineExpose({scrollToHour})
+defineExpose({ scrollToHour })
 
 const timelineItemRefs = ref([])
 
@@ -54,6 +58,7 @@ watchPostEffect(async () => {
 
 function scrollToHour(hour = null, isSmooth = true) {
   hour ??= new Date().getHours()
+
   const options = { behavior: isSmooth ? 'smooth' : 'instant' }
 
   if (hour === MIDNIGHT_HOUR) {
@@ -75,7 +80,8 @@ function scrollToHour(hour = null, isSmooth = true) {
         :activity-select-options="activitySelectOptions"
         ref="timelineItemRefs"
         @scroll-to-hour="scrollToHour"
-        @selectActivity="emit('setTimelineItemActivity', timelineItem, $event)"
+        @select-activity="emit('setTimelineItemActivity', timelineItem, $event)"
+        @update-activity-seconds="emit('updateTimelineItemActivitySeconds', timelineItem, $event)"
       />
     </ul>
   </div>
